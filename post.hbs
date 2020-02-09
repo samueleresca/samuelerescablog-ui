@@ -1,0 +1,112 @@
+{{!-- The tag below means - insert everything in this file into the {body} of the default.hbs template --}}
+{{!< default}}
+
+{{!-- Everything inside the #post tags pulls data from the post --}}
+{{#post}}
+{{#if feature_image}}
+<style type="text/css">
+    .responsive-header-img-{{slug}} {
+        background-image: url({{img_url feature_image size='l'}});
+    }
+    @media(max-width: 991px) {
+        .responsive-header-img-{{slug}} {
+            background-image: url({{img_url feature_image size='m'}});
+            background-image: -webkit-image-set(
+                url({{img_url feature_image size='m'}}) 1x,
+                url({{img_url feature_image size='l'}}) 2x
+            );
+            background-image: image-set(
+                url({{img_url feature_image size='m'}}) 1x,
+                url({{img_url feature_image size='l'}}) 2x
+            );
+        }
+    }
+</style>
+{{/if}}
+<main id="content" role="main" data-id="{{comment_id}}">
+    <article class="{{post_class}}">
+        <div class="post-header responsive-header-img-{{slug}} rellax" data-rellax-speed="7">
+            <div class="inner rellax" data-rellax-speed="1">
+                <div class="tags">{{tags limit=1}}</div>
+                <h1 class="post-title">{{title}}</h1> 
+                <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
+            </div>
+            <a href="#post-content" class="view-more"></a>
+            <span class="simulate-bg"></span>
+        </div>
+        <div class="post-content" id="post-content" data-midnight="black">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-10 ml-auto mr-auto">
+                        <div class="editor-content">{{content}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="progress"></div>         
+        </div>
+        <ul class="share" data-midnight="black">
+            <li><a class="read-later btn" href="#" data-toggle="tooltip" data-placement="top" data-id={{id}} title="{{t "Save to bookmarks"}}"><i class="far fa-bookmark"></i></a></li>
+            <li><a class="facebook btn" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" data-toggle="tooltip" data-placement="top" onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;" title="{{t "Share on Facebook"}}"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+            <li><a class="twitter btn" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}" data-toggle="tooltip" data-placement="top" onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" title="{{t "Share on Twitter"}}"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+            <li><a class="reddit btn" href="https://www.reddit.com/submit?url={{url absolute="true"}}%2F&title={{encode title}}" data-toggle="tooltip" data-placement="top" class="reddit" title="{{t "Share on Reddit"}}"><i class="fab fa-reddit-alien" aria-hidden="true"></i></a></li>
+            <li><a class="email btn" href="mailto:?subject={{encode title}}&amp;body={{url absolute="true"}}" data-toggle="tooltip" data-placement="top" class="email" title="{{t "Share by Email"}}"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+        </ul>   
+        <div class="post-footer" data-midnight="black">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-10 ml-auto mr-auto">
+                        <div class="post-meta">
+                            <div class="tags">{{tags separator=', '}}</div>
+                        </div>
+                        <div class="authors">
+                            {{#if authors}}
+                                {{#foreach authors}}
+                                    <div class="author">
+                                        {{#if profile_image}}
+                                        <figure class="intro-image">
+                                            <a class="img" href="{{url}}" title="{{name}}"><img src="{{img_url profile_image size="xs"}}" alt="{{name}}"></a>
+                                        </figure>
+                                        {{/if}}
+                                        <div class="inner">
+                                            <h3><strong><a href="{{url}}">{{name}}</a></strong></h3>
+                                            {{#if bio}}
+                                                <p>{{bio}}</p>
+                                            {{/if}}
+                                        </div>
+                                        <ul class="links">
+                                            {{#if twitter}}<li><a href="{{twitter_url}}" class="twitter" target="_blank" data-toggle="tooltip" data-placement="top" title="{{twitter}}"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>{{/if}}
+                                            {{#if facebook}}<li><a href="{{facebook_url}}" class="facebook" target="_blank" data-toggle="tooltip" data-placement="top" title="{{facebook}}"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>{{/if}}
+                                            {{#if website}}<li><a href="{{website}}" class="website" target="_blank" data-toggle="tooltip" data-placement="top" title="{{website}}"><i class="fa fa-link" aria-hidden="true"></i></a></li>{{/if}}
+                                        </ul>
+                                    </div>
+                                {{/foreach}}
+                            {{/if}}
+                        </div>
+                        <div class="comments"><a href="#" class="btn">{{t "Write a comment"}}</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+</main>
+
+<div class="post-nav" data-midnight="default">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="loop">
+                    {{#next_post}}
+                        {{> "loop"}}
+                        <a href="{{url}}" class="next-post">{{t "Next post"}}</a>
+                    {{/next_post}}
+                    {{#prev_post}}
+                        {{> "loop"}}
+                        <a href="{{url}}" class="prev-post">{{t "Prev post"}}</a>
+                    {{/prev_post}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{/post}}
