@@ -1,43 +1,53 @@
 {
-    "name": "okiku",
-    "description": "Okiku is a modern horizontal music Ghost theme filled with awesome effects. The theme is responsive, fast, clean with tasty typography and big images.",
-    "demo": "https://okiku.hauntedthemes.com/",
-    "version": "1.0.0",
-    "license": "GNU General Public License, Version 2",
-    "engines": {
-        "ghost": ">=2.0.0",
-        "ghost-api": "v2"
-    },
-    "author": {
-        "name": "Haunted Themes",
-        "email": "contact@hauntedthemes.com",
-        "url": "https://www.hauntedthemes.com"
-    },
-    "gpm": {
-        "type": "theme",
-        "categories": [
-            "Music"
-        ]
-    },
-    "keywords": [
-        "ghost",
-        "theme",
-        "ghost-theme"
-    ],
-    "config": {
-        "posts_per_page": 6,
-        "image_sizes": {
-            "xs": {
-                "width": 80,
-                "height": 80
-            },
-            "m": {
-                "width": 700,
-                "height": 1200
-            },
-            "l": {
-                "width": 1920
-            }
-        }
+  "author": {
+    "email": "samuele.resca@gmail.com",
+    "name": "Samuele Resca",
+    "url": "https://samuele.dev"
+  },
+  "config": {
+    "posts_per_page": 10,
+    "image_sizes": {
+      "xxs": {
+        "width": 30
+      },
+      "xs": {
+        "width": 100
+      },
+      "s": {
+        "width": 300
+      },
+      "m": {
+        "width": 600
+      },
+      "l": {
+        "width": 1000
+      },
+      "xl": {
+        "width": 2000
+      }
     }
+  },
+  "demo": "https://liebling.eduardogomez.io",
+  "description": "Beautiful and clean theme that is easy and comfortable to use.",
+  "engines": {
+    "ghost": ">=2.0.0",
+    "ghost-api": "v2"
+  },
+  "gpm": {
+    "type": "theme",
+    "categories": [
+    ]
+  },
+  "keywords": [
+    "ghost",
+    "theme",
+    "ghost-theme"
+  ],
+  "license": "MIT",
+  "name": "samueleresca-ui",
+  "screenshots": {
+    "desktop": "assets/screenshot-desktop.jpg",
+    "mobile": "assets/screenshot-mobile.jpg"
+  },
+  "version": "0.6.5"
 }
