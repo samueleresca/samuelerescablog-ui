@@ -25,10 +25,10 @@
   --background-color: #111;
   --primary-foreground-color: #ccc;
   --secondary-foreground-color: #fff;
-  --primary-subtle-color: #2c2fe6;
+  --primary-subtle-color: #ececec;
   --secondary-subtle-color: #141920;
   --titles-color: #b4b4b4;
-  --link-color: #2c2fe6;
+  --link-color: #ececec;
   --primary-border-color: #1d1d1d;
   --secondary-border-color: #0f0f0f;
   --article-shadow-normal: 0 4px 5px 5px rgba(0,0,0,0.1);
@@ -39,8 +39,8 @@
   --button-shadow-color-normal: rgba(10, 10, 10, 0.5);
   --button-shadow-color-hover: rgba(10, 10, 10, 0.5);
   --toggle-darkmode-button-color: #efd114;
-  --table-background-color-odd: #050505;
-  --table-head-border-bottom: #1d1d1d;
+  --table-background-color-odd: #fafafa;
+  --table-head-border-bottom: #e2e2e2;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -48,10 +48,10 @@
     --background-color: #111;
     --primary-foreground-color: #ccc;
     --secondary-foreground-color: #fff;
-    --primary-subtle-color: #2c2fe6;
+    --primary-subtle-color: #ececec;
     --secondary-subtle-color: #141920;
     --titles-color: #b4b4b4;
-    --link-color: #2c2fe6;
+    --link-color: #ececec;
     --primary-border-color: #1d1d1d;
     --secondary-border-color: #0f0f0f;
     --article-shadow-normal: 0 4px 5px 5px rgba(0,0,0,0.1);
@@ -62,7 +62,7 @@
     --button-shadow-color-normal: rgba(10, 10, 10, 0.5);
     --button-shadow-color-hover: rgba(10, 10, 10, 0.5);
     --toggle-darkmode-button-color: #efd114;
-    --table-background-color-odd: #050505;
-    --table-head-border-bottom: #1d1d1d;
+    --table-background-color-odd: #fafafa;
+    --table-head-border-bottom: #e2e2e2;
   }
 }

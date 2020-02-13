@@ -24,7 +24,7 @@ into the {body} of the default.hbs template --}}
     <p class="m-hero-description">{{bio}}</p>
     {{/if}}
     <div class="m-hero__meta">
-      {{#has any="twitter, facebook, website"}}
+      {{#has any="twitter, website"}}
       <ul class="m-hero-social">
         {{#if website}}
         <li>
@@ -33,17 +33,20 @@ into the {body} of the default.hbs template --}}
           </a>
         </li>
         {{/if}}
-        {{#if facebook}}
         <li>
-          <a href="https://facebook.com/{{facebook}}" target="_blank" rel="noopener" aria-label="Facebook">
-            <span class="icon-facebook"></span>
+          <a href="https://github.com/samueleresca" target="_blank" rel="noopener" aria-label="Github">
+            <span class="icon-github"></span>
           </a>
         </li>
-        {{/if}}
         {{#if twitter}}
         <li>
           <a href="https://twitter.com/{{twitter}}" target="_blank" rel="noopener" aria-label="Twitter">
             <span class="icon-twitter"></span>
+          </a>
+        </li>
+         <li>
+          <a href="https://www.linkedin.com/in/samuele-resca/" target="_blank" rel="noopener" aria-label="Linkedin">
+            <span class="icon-linkedin"></span>
           </a>
         </li>
         {{/if}}
