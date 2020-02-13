@@ -20,11 +20,11 @@ steps:
 - script: |
     npm install
     npm run get-database
-  workingDirectory: '/src'
+  workingDirectory: 'src'
   displayName: 'npm install and generate database'
 
 - script: |
     npm run docker-watch
-  workingDirectory: '/src'
+  workingDirectory: 'src'
   displayName: 'run docker watch'
 
