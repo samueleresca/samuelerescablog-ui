@@ -19,12 +19,11 @@ steps:
     dockerVersion: '17.09.0-ce'
 - script: |
     npm install
-    npm run get-database
   workingDirectory: 'src'
-  displayName: 'npm install and generate database'
+  displayName: 'npm install'
 
 - script: |
-    npm run docker-watch
+    npm run zip
   workingDirectory: 'src'
-  displayName: 'run docker watch'
+  displayName: 'zipping ui'
 
