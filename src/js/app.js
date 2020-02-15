@@ -50,7 +50,7 @@ $(document).ready(() => {
     $submenu.removeClass('closed').addClass('opened')
   }
 
-  const forceGistTheme() => {
+  const forceGistTheme = () => {
     $gistFiles.attr('data-theme', 'light')
   }
 

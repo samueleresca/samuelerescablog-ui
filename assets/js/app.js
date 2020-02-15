@@ -68,9 +68,9 @@ jquery__WEBPACK_IMPORTED_MODULE_1___default()(document).ready(function () {
     $submenu.removeClass('closed').addClass('opened');
   }
 
-  function forceGistTheme() {
+  var forceGistTheme = function forceGistTheme() {
     $gistFiles.attr('data-theme', 'light');
-  }
+  };
 
   var forceDarkMode = function forceDarkMode() {
     jquery__WEBPACK_IMPORTED_MODULE_1___default()('html').attr('data-theme', 'dark');
