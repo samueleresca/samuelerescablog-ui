@@ -3,6 +3,7 @@
   margin: 0;
   list-style-type: none;
   text-align: center;
+  font-size: 2rem;
 
   @include respond-to('medium') {
     text-align: left;

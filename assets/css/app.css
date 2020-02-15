@@ -3772,6 +3772,7 @@ _:-ms-fullscreen, :root .m-toggle-darkmode {
   margin: 0;
   list-style-type: none;
   text-align: center;
+  font-size: 2rem;
 }
 @media only screen and (min-width: 48rem) {
   .m-author-links {

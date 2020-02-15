@@ -72,6 +72,11 @@ jquery__WEBPACK_IMPORTED_MODULE_1___default()(document).ready(function () {
     $gistFiles.attr('data-theme', 'light');
   }
 
+  var forceDarkMode = function forceDarkMode() {
+    jquery__WEBPACK_IMPORTED_MODULE_1___default()('html').attr('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+  };
+
   function hideSubmenu() {
     $header.removeClass('submenu-is-active');
     $toggleSubmenu.removeClass('active');
@@ -179,15 +184,6 @@ jquery__WEBPACK_IMPORTED_MODULE_1___default()(document).ready(function () {
       $searchNoResults.hide();
     }
   });
-  $toggleDarkMode.change(function () {
-    if ($toggleDarkMode.is(':checked')) {
-      jquery__WEBPACK_IMPORTED_MODULE_1___default()('html').attr('data-theme', 'dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      jquery__WEBPACK_IMPORTED_MODULE_1___default()('html').attr('data-theme', 'light');
-      localStorage.setItem('theme', 'light');
-    }
-  });
   jquery__WEBPACK_IMPORTED_MODULE_1___default()(window).click(function (e) {
     if (submenuIsOpen) {
       if ($submenuOption && !$submenuOption.contains(e.target)) {
@@ -255,6 +251,7 @@ jquery__WEBPACK_IMPORTED_MODULE_1___default()(document).ready(function () {
   Object(shave__WEBPACK_IMPORTED_MODULE_6__["default"])('.js-article-card-title', 100);
   Object(shave__WEBPACK_IMPORTED_MODULE_6__["default"])('.js-article-card-title-no-image', 250);
   trySearchFeature();
+  forceDarkMode();
   forceGistTheme();
 });
 

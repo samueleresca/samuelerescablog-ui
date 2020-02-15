@@ -54,6 +54,11 @@ $(document).ready(() => {
     $gistFiles.attr('data-theme', 'light')
   }
 
+  const forceDarkMode = () => {
+    $('html').attr('data-theme', 'dark')
+    localStorage.setItem('theme', 'dark')
+  };
+
   function hideSubmenu() {
     $header.removeClass('submenu-is-active')
     $toggleSubmenu.removeClass('active')
@@ -176,16 +181,6 @@ $(document).ready(() => {
     }
   })
 
-  $toggleDarkMode.change(() => {
-    if ($toggleDarkMode.is(':checked')) {
-      $('html').attr('data-theme', 'dark')
-      localStorage.setItem('theme', 'dark')
-    } else {
-      $('html').attr('data-theme', 'light')
-      localStorage.setItem('theme', 'light')
-    }
-  })
-
   $(window).click((e) => {
     if (submenuIsOpen) {
       if ($submenuOption && !$submenuOption.contains(e.target)) {
@@ -257,5 +252,6 @@ $(document).ready(() => {
   shave('.js-article-card-title-no-image', 250)
 
   trySearchFeature()
+  forceDarkMode()
   forceGistTheme()
 })
