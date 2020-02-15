@@ -57,6 +57,7 @@ jquery__WEBPACK_IMPORTED_MODULE_1___default()(document).ready(function () {
   var $searchResults = jquery__WEBPACK_IMPORTED_MODULE_1___default()('.js-search-results');
   var $searchNoResults = jquery__WEBPACK_IMPORTED_MODULE_1___default()('.js-no-results');
   var $toggleDarkMode = jquery__WEBPACK_IMPORTED_MODULE_1___default()('.js-toggle-darkmode');
+  var $gistFiles = jquery__WEBPACK_IMPORTED_MODULE_1___default()('.gist-file');
   var currentSavedTheme = localStorage.getItem('theme');
   var fuse = null;
   var submenuIsOpen = false;
@@ -65,6 +66,10 @@ jquery__WEBPACK_IMPORTED_MODULE_1___default()(document).ready(function () {
     $header.addClass('submenu-is-active');
     $toggleSubmenu.addClass('active');
     $submenu.removeClass('closed').addClass('opened');
+  }
+
+  function forceGistTheme() {
+    $gistFiles.attr('data-theme', 'light');
   }
 
   function hideSubmenu() {
@@ -250,6 +255,7 @@ jquery__WEBPACK_IMPORTED_MODULE_1___default()(document).ready(function () {
   Object(shave__WEBPACK_IMPORTED_MODULE_6__["default"])('.js-article-card-title', 100);
   Object(shave__WEBPACK_IMPORTED_MODULE_6__["default"])('.js-article-card-title-no-image', 250);
   trySearchFeature();
+  forceGistTheme();
 });
 
 /***/ }),

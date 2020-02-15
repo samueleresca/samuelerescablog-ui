@@ -63,4 +63,4 @@ module.exports = __webpack_require__(/*! /Users/samuele.resca/Projects/samuelere
 
 /***/ })
 
-},[[0,"/js/manifest","/js/vendor"]]]);
+},[[0,"/js/manifest"]]]);

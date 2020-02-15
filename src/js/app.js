@@ -20,6 +20,7 @@ $(document).ready(() => {
     $('html').attr('dir', 'rtl').addClass('rtl')
   }
 
+
   const $body = $('body')
   const $header = $('.js-header')
   const $openMenu = $('.js-open-menu')
@@ -36,7 +37,9 @@ $(document).ready(() => {
   const $searchResults = $('.js-search-results')
   const $searchNoResults = $('.js-no-results')
   const $toggleDarkMode = $('.js-toggle-darkmode')
+  const $gistFiles = $('.gist-file')
   const currentSavedTheme = localStorage.getItem('theme')
+
 
   let fuse = null
   let submenuIsOpen = false
@@ -45,6 +48,10 @@ $(document).ready(() => {
     $header.addClass('submenu-is-active')
     $toggleSubmenu.addClass('active')
     $submenu.removeClass('closed').addClass('opened')
+  }
+
+  function forceGistTheme(){
+    $gistFiles.attr('data-theme', 'light')
   }
 
   function hideSubmenu() {
@@ -250,4 +257,5 @@ $(document).ready(() => {
   shave('.js-article-card-title-no-image', 250)
 
   trySearchFeature()
+  forceGistTheme()
 })

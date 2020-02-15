@@ -1,8 +1,11 @@
 .m-nav {
+  text-align: center;
+
   @include respond-to('medium') {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    text-align: left;
   }
 }
 
@@ -12,6 +15,7 @@
   @include respond-to('medium') {
     margin-bottom: 0;
   }
+
 
   ul {
     padding: 0;
