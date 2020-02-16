@@ -35,25 +35,25 @@ This header template is shared across all the pages.
           <nav class="m-nav__left">
             <ul role="submenu">
               {{#if @site.logo}}
-                <li class="only-desktop" role="menuitem">
+                {{!-- <li class="only-desktop" role="menuitem">
                   <a href="{{@site.url}}" class="m-logo">
                     <img src="{{@site.logo}}" alt="{{@site.title}}">
                   </a>
-                </li>
+                </li> --}}
                 {{else}}
-                <li class="only-desktop" role="menuitem">
+                {{!-- <li class="only-desktop" role="menuitem">
                   <a href="{{@site.url}}" class="m-site-name in-desktop-menu">
                     {{@site.title}}
                   </a>
-                </li>
+                </li> --}}
               {{/if}}
               {{#if @site.navigation}}
                 {{navigation}}
               {{/if}}
               <li role="menuitem" class="js-submenu-option">
-                <button class="m-icon-button in-menu-main more js-toggle-submenu" aria-label="Toggle submenu">
+                {{!-- <button class="m-icon-button in-menu-main more js-toggle-submenu" aria-label="Toggle submenu">
                   <span class="icon-more"></span>
-                </button>
+                </button> --}}
                 <div class="m-submenu js-submenu">
                   <div class="l-wrapper in-submenu">
                     <section class="m-recent-articles">

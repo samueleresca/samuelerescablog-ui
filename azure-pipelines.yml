@@ -23,7 +23,7 @@ steps:
   displayName: 'npm install'
 
 - script: |
-    npm run zip
+    npm run production
   workingDirectory: 'src'
-  displayName: 'zipping ui'
+  displayName: 'production task'
 

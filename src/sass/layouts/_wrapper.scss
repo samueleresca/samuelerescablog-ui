@@ -8,6 +8,10 @@
     max-width: 1200px;
   }
 
+  .m-menu__main & {
+    max-width: none;
+  }
+
   @include respond-to('extra-large') {
     padding: 0;
   }

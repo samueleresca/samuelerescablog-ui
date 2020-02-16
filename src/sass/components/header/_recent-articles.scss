@@ -3,7 +3,9 @@
   overflow: hidden;
 
   @include respond-to('medium') {
-    margin: 0 0 40px;
+    margin: 0 auto 40px;
+    display: inline-block;
+    max-width: 768px;
   }
 
   ul {
