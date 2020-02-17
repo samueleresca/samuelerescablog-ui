@@ -13,9 +13,9 @@ into the {body} of the default.hbs template --}}
   {{!-- Inject styles of the hero image to make it responsive --}}
   {{> hero background=@site.cover_image}}
   <div class="m-hero__content" data-aos="fade-down">
-    <h1 class="m-hero-title bigger">{{@site.title}}</h1>
+    <h1 class="m-hero-title">{{@site.title}}</h1>
     {{#if @site.description}}
-    <p class="m-hero-description bigger">{{@site.description}}</p>
+    {{!-- <p class="m-hero-description bigger">{{@site.description}}</p> --}}
     <nav class="m-header-social">
       <a href="https://github.com/samueleresca" target="_blank" rel="noopener" aria-label="Github">
         <span class="icon-github"></span>
@@ -33,7 +33,7 @@ into the {body} of the default.hbs template --}}
     {{/if}}
   </div>
   </section>
-
+  {{> bookbanner}}
   <main>
     <div class="l-content">
       <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">

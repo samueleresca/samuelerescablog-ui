@@ -223,7 +223,7 @@ $(document).ready(() => {
     $recentArticles.slick({
       adaptiveHeight: true,
       arrows: false,
-      infinite: false,
+      infinite: true,
       mobileFirst: true,
       variableWidth: true,
       rtl: isRTL()
