@@ -28,8 +28,8 @@ into the {body} of the default.hbs template --}}
       </a>
     </nav>
     {{/if}}
-    {{#if @labs.subscribers}}
-    <a href="{{@site.url}}/subscribe" class="m-button filled">{{t "Subscribe"}}</a>
+    {{#if @labs.members}}
+    <a href="{{@site.url}}/members/signup" class="m-button outlined">{{t "Subscribe"}}</a>
     {{/if}}
   </div>
   </section>
