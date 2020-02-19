@@ -39,9 +39,9 @@
     font-size: 0.625rem;
     z-index: 2;
 
-    @include respond-to('medium') {
-      display: none !important;
-    }
+    // @include respond-to('medium') {
+    //   display: none !important;
+    // }
   }
 
   &.as-close-search {

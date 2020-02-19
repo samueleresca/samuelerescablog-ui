@@ -24,6 +24,7 @@ mix.js('js/helpers.js', 'js/')
   .extract()
   .setResourceRoot('/assets')
   .setPublicPath('../assets')
+  .minify('js/vendor.js')
   .sass('sass/app.scss', 'css/')
   .options({
     processCssUrls: false

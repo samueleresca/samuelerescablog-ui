@@ -12,13 +12,13 @@ for it, and apply those styles to the <header> tag.
 
   @media(max-width: 1000px) {
     .m-hero__picture {
-      background-image: url({{img_url background size='l'}});
+      background-image: url({{img_url background size='xl'}});
     }
   }
 
   @media(max-width: 600px) {
     .m-hero__picture {
-      background-image: url({{img_url background size='m'}});
+      background-image: url({{img_url background size='xl'}});
     }
   }
 
@@ -31,7 +31,7 @@ for it, and apply those styles to the <header> tag.
   <div class="m-hero__picture {{#is "post"}}in-post{{/is}}"></div>
   {{#is "post"}}
   <div class="m-hero__content" data-aos="fade-down">
-    <h1 class="m-hero-title bigger in-post">{{title}}</h1>
+    <h1 class="m-hero-title in-post">{{title}}</h1>
     <div class="m-heading__meta">
       {{#if primary_tag}}
       <a href="{{primary_tag.url}}" class="m-heading__meta__tag">{{primary_tag.name}}</a>

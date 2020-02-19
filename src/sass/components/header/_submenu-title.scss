@@ -5,6 +5,10 @@
   font-weight: 400;
   margin: 0 0 25px;
 
+  @include respond-to('medium') {
+    font-size: 2.125rem;
+  }
+
   &.in-recent-articles {
     padding: 0 $mobile-space;
 

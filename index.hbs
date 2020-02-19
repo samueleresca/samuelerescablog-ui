@@ -13,14 +13,14 @@ into the {body} of the default.hbs template --}}
   {{!-- Inject styles of the hero image to make it responsive --}}
   {{> hero background=@site.cover_image}}
   <div class="m-hero__content" data-aos="fade-down">
-    <h1 class="m-hero-title bigger">{{@site.title}}</h1>
+    <h1 class="m-hero-title uppercase">{{@site.title}}</h1>
     {{#if @site.description}}
-    <p class="m-hero-description bigger">{{@site.description}}</p>
+    {{!-- <p class="m-hero-description bigger">{{@site.description}}</p> --}}
     <nav class="m-header-social">
       <a href="https://github.com/samueleresca" target="_blank" rel="noopener" aria-label="Github">
         <span class="icon-github"></span>
       </a>
-      <a href="https://twitter.com/tryghost" target="_blank" rel="noopener" aria-label="Twitter">
+      <a href="https://twitter.com/samueleresca" target="_blank" rel="noopener" aria-label="Twitter">
         <span class="icon-twitter"></span>
       </a>
       <a href="https://www.linkedin.com/in/samuele-resca/" target="_blank" rel="noopener" aria-label="Twitter">
@@ -28,12 +28,12 @@ into the {body} of the default.hbs template --}}
       </a>
     </nav>
     {{/if}}
-    {{#if @labs.subscribers}}
-    <a href="{{@site.url}}/subscribe" class="m-button filled">{{t "Subscribe"}}</a>
+    {{#if @labs.members}}
+    <a href="{{@site.url}}/members/signup" class="m-button outlined">{{t "Subscribe"}}</a>
     {{/if}}
   </div>
   </section>
-
+  {{> bookbanner}}
   <main>
     <div class="l-content">
       <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">

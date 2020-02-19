@@ -126,15 +126,15 @@ $(document).ready(() => {
     toggleScrollVertical()
   })
 
-  $toggleSubmenu.click(() => {
-    submenuIsOpen = !submenuIsOpen
+  // $toggleSubmenu.click(() => {
+  //   submenuIsOpen = !submenuIsOpen
 
-    if (submenuIsOpen) {
-      showSubmenu()
-    } else {
-      hideSubmenu()
-    }
-  })
+  //   if (submenuIsOpen) {
+  //     showSubmenu()
+  //   } else {
+  //     hideSubmenu()
+  //   }
+  // })
 
   $openSearch.click(() => {
     $search.addClass('opened')
@@ -223,7 +223,7 @@ $(document).ready(() => {
     $recentArticles.slick({
       adaptiveHeight: true,
       arrows: false,
-      infinite: false,
+      infinite: true,
       mobileFirst: true,
       variableWidth: true,
       rtl: isRTL()
