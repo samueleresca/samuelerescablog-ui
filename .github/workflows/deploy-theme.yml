@@ -1,17 +1,21 @@
-name: CI
-
+name: Deploy Theme
 on: [push]
 
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
+  deploy:
+    runs-on: ubuntu-18.04
     steps:
-    - uses: actions/checkout@v2
-    - name: Deploy samueleresca-ui
-      uses: samueleresca/samuelerescablog-ui
-      with:
-        api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
-        api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
-        # Files or folders to exclude (space-separated list)
-        exclude: # optional
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      - run: npm install
+        working-directory: ./src
+      - name: Build theme
+        working-directory: ./src
+        run: npm run production
+      - name: 'Deploy Ghost Theme'
+        run: node src/deploy/index.js
+        env:
+          url: ${{ secrets.GHOST_ADMIN_API_URL }}
+          key: ${{ secrets.GHOST_ADMIN_API_KEY }}
