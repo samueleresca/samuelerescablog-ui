@@ -22,6 +22,11 @@
     }
   }
 
+  .m-article-card__initial {
+    margin: 10px 0;
+    display: inline-block;
+  }
+
   .home-template & {
     width: calc((100%));
 

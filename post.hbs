@@ -35,7 +35,8 @@ into the {body} of the default.hbs template --}}
                       class="m-icon-button filled in-share" target="_blank" rel="noopener" aria-label="Twitter">
                       <span class="icon-twitter"></span>
                     </a>
-                    <a class="m-icon-button filled in-share" href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute='true'}}&title={{encode title}}"
+                    <a class="m-icon-button filled in-share"
+                      href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute='true'}}&title={{encode title}}"
                       onclick="window.open(this.href, 'mywin',
 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">
                       <span class="icon-linkedin"></span>
@@ -63,19 +64,15 @@ into the {body} of the default.hbs template --}}
                     {{t "Get the latest posts delivered right to your inbox."}}
                   </p>
                 </div>
-        <form class="signup-form" data-members-form="signup">
-            <h1 class="signup-title">Signup to {{@site.title}}</h1>
-            <p>{{@site.description}}</p>
-            <div class="signup-box">
-                <input data-members-email type="email" placeholder="Type your email..." required="true" autocomplete="false" />
-                <button class="button primary" type="submit">
-                    <span class="button-content">Continue</span>
-                    <span class="button-loader">{{> "icons/loader"}}</span>
-                </button>
-            </div>
-            <div class="message-success"><strong>Great!</strong> Check your inbox and click the link to confirm your subscription</div>
-            <div class="message-error">Please enter a valid email address!</div>
-        </form>
+                <form class="signup-form" data-members-form="signup">
+                  <fieldset>
+                    <input data-members-email type="email" placeholder="Type your email..." required="true"
+                      autocomplete="false" class="m-input in-subscribe-section" />
+                    <button class="m-button outlined block" type="submit">
+                      <span class="button-content">Subscribe</span>
+                    </button>
+                  </fieldset>
+                </form>
               </div>
             </div>
           </section>
@@ -108,13 +105,11 @@ into the {body} of the default.hbs template --}}
                   <p class="m-author__bio">{{primary_author.bio}}</p>
                   {{/if}}
                   <ul class="m-author-links">
-                    {{#if primary_author.website}}
                     <li>
-                      <a href="{{primary_author.website}}" target="_blank" rel="noopener" aria-label="Website">
-                        <span class="icon-globe"></span>
+                      <a href="https://github.com/samueleresca" target="_blank" rel="noopener" aria-label="Github">
+                        <span class="icon-github"></span>
                       </a>
                     </li>
-                    {{/if}}
                     {{#if primary_author.twitter}}
                     <li>
                       <a href="https://twitter.com/{{primary_author.twitter}}" target="_blank" rel="noopener"
@@ -133,33 +128,8 @@ into the {body} of the default.hbs template --}}
                 </div>
               </div>
             </section>
-         
-          <section class="m-comments">
-            <div class="m-load-comments">
-              <div class="m-load-comments__line"></div>
-              <button class="m-icon-button filled as-load-comments js-tooltip js-load-comments" data-tippy-content="Load comments">
-                <span class="icon-comments"></span>
-              </button>
-            </div>
-            <div class="m-load-comments__iframe l-wrapper in-comments js-comments-iframe">
-              <div id="disqus_thread"></div>
-              <script defer>
-                var disqus_config = function () {
-                  this.page.url = "{{url absolute="true"}}";
-                  this.page.identifier = "ghost-{{comment_id}}"
-                };
-                (function () {
-                  var d = document, s = d.createElement('script');
-                  s.src = 'https://samuelerescanet.disqus.com/embed.js';
-                  s.setAttribute('data-timestamp', +new Date());
-                  (d.head || d.body).appendChild(s);
-                })();
-              </script>
-            </div>
-          </section>
-            {{/post}}
             {{!-- Related posts --}}
-            {{#get "posts" limit="3" order="published_at desc" include="tags,authors" as |related|}}
+            {{#get "posts" limit="10" order="published_at desc" include="tags,authors" as |related|}}
             <section class="m-recommended">
               <div class="l-wrapper in-recommended">
                 <h3 class="m-section-title in-recommended">{{t "Recommended for you"}}</h3>
@@ -172,6 +142,31 @@ into the {body} of the default.hbs template --}}
               </div>
             </section>
             {{/get}}
+            <section class="m-comments">
+              <div class="m-load-comments">
+                <div class="m-load-comments__line"></div>
+                <button class="m-icon-button filled as-load-comments js-tooltip js-load-comments"
+                  data-tippy-content="Load comments">
+                  <span class="icon-comments"></span>
+                </button>
+              </div>
+              <div class="m-load-comments__iframe l-wrapper in-comments js-comments-iframe">
+                <div id="disqus_thread"></div>
+                <script defer>
+                  var disqus_config = function () {
+                    this.page.url = "{{url absolute="true"}}";
+                    this.page.identifier = "ghost-{{comment_id}}"
+                  };
+                  (function () {
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://samuelerescanet.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                  })();
+                </script>
+              </div>
+            </section>
+            {{/post}}
         </div>
     </article>
   </main>
