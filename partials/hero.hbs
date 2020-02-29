@@ -23,7 +23,7 @@ for it, and apply those styles to the <header> tag.
   }
 
   .m-hero__picture.in-post {
-     background-image: url({{img_url background size='xl'}}) !important;
+    background-image: url({{img_url background size='xl'}}) !important;
   }
 </style>
 {{/contentFor}}
@@ -39,6 +39,23 @@ for it, and apply those styles to the <header> tag.
       {{/if}}
       <span class="m-heading__meta__time">{{date published_at}}</span>
     </div>
+    {{#if @site.description}}
+    {{!-- <p class="m-hero-description bigger">{{@site.description}}</p> --}}
+    <nav class="m-header-social">
+      <a href="https://github.com/samueleresca" target="_blank" rel="noopener" aria-label="Github">
+        <span class="icon-github"></span>
+      </a>
+      <a href="https://twitter.com/samueleresca" target="_blank" rel="noopener" aria-label="Twitter">
+        <span class="icon-twitter"></span>
+      </a>
+      <a href="https://www.linkedin.com/in/samuele-resca/" target="_blank" rel="noopener" aria-label="Twitter">
+        <span class="icon-linkedin"></span>
+      </a>
+    </nav>
+    {{/if}}
+    {{#if @labs.members}}
+    <a href="{{@site.url}}/signup" class="m-button outlined">{{t "Subscribe"}}</a>
+    {{/if}}
   </div>
   {{/is}}
   {{else}}
