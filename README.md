@@ -4,7 +4,6 @@
 
 The Ghost theme ç customized and used by [samuele.dev](https://samuele.dev) and [samueleresca.net](https://samueleresca.net). Credits to [https://github.com/eddiesigner/liebling](https://github.com/eddiesigner/liebling).
 
-
 ## Run
 
 1. `cd src`
