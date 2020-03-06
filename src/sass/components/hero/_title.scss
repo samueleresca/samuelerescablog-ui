@@ -6,6 +6,7 @@
   font-weight: 700;
   margin: 0 0 15px;
   text-transform: uppercase;
+  cursor: default;
 
   @include respond-to('medium') {
     letter-spacing: 0.5px;

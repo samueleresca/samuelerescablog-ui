@@ -36,16 +36,20 @@
 }
 
 .message {
-  margin: 10px
+  margin: 10px 0;
 }
 
 .message-success {
   display: none;
+  text-align: center;
+  width: 100%;
 }
 
 .message-error {
   display: none;
   color: var(--error-color);
+  text-align: center;
+  width: 100%;
 }
 
 .m-heading.in-subscribe-page {
