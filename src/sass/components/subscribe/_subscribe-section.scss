@@ -9,6 +9,47 @@
 
 .signup-form {
   flex: 1;
+
+  &.success {
+
+    .message-success {
+      display: inline-block;
+    }
+
+    input, button, .m-heading {
+      display: none;
+    }
+  }
+
+  &.error {
+    .message-error {
+      display: inline-block;
+    }
+  }
+
+  &.loading {
+    .m-button.outlined {
+      background-color: var(--titles-color);
+      cursor: default;
+    }
+  }
+}
+
+.message {
+  margin: 10px
+}
+
+.message-success {
+  display: none;
+}
+
+.message-error {
+  display: none;
+  color: var(--error-color);
+}
+
+.m-heading.in-subscribe-page {
+  margin: 0 auto 20px;
 }
 
 .m-subscribe-section__content {
