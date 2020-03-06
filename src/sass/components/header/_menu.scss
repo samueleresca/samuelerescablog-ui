@@ -21,22 +21,23 @@
   }
 }
 
+.mvp-logo {
+  div{
+    display: inline-block;
+    margin: 0 auto;
+    width: 160px;
+    height: 245px;
+    background-size: 100%;
+  }
+}
+
 .m-menu__main {
   padding: 50px 0 5px;
   min-height: 100%;
-
-  // @include respond-to('medium') {
-  //   padding: 0;
-  //   min-height: 0;
-  // }
 }
 
 .rtl {
   .m-menu__main {
     padding-top: 75px;
-
-    // @include respond-to('medium') {
-    //   padding: 0;
-    // }
   }
 }
