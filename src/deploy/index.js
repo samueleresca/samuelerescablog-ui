@@ -13,6 +13,7 @@ const GhostAdminApi = require('@tryghost/admin-api');
         console.log('Theme successfully uploaded.');
     } catch (err) {
         console.error(err);
+        console.error(err.errors.map(x=>x.message));
         process.exit(1);
     }
 }());
