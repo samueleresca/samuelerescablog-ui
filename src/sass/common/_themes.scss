@@ -42,6 +42,14 @@
   --toggle-darkmode-button-color: #efd114;
   --table-background-color-odd: #050505;
   --table-head-border-bottom: #1d1d1d;
+  --info-message-color: #059;
+  --info-message-background-color: #BEF;
+  --success-message-color: #270;
+  --success-message-background-color: #DFF2BF;
+  --warning-message-color: #9F6000;
+  --warning-message-background-color:#FEEFB3;
+  --error-message-color: #D8000C;
+  --error-message-background-color:#FFBABA;
 }
 
 @media (prefers-color-scheme: dark) {
