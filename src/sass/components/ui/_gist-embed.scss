@@ -1,5 +1,9 @@
 .l-wrapper .gist {
+    height: 100%;
+    
     .gist-data {
         max-height: 50vh;
+        display: flex;
+        flex: auto;
     }
 }
