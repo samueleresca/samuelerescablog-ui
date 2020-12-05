@@ -1,49 +1,4 @@
-.cc-revoke.cc-top {
-    top: 0;
-    left: 3em;
-    border-bottom-left-radius: 0.5em;
-    border-bottom-right-radius: 0.5em;
-  }
-  .cc-revoke.cc-bottom {
-    bottom: 0;
-    left: 3em;
-    border-top-left-radius: 0.5em;
-    border-top-right-radius: 0.5em;
-  }
-  .cc-revoke.cc-left {
-    left: 3em;
-    right: unset;
-  }
-  .cc-revoke.cc-right {
-    right: 3em;
-    left: unset;
-  }
-  
-  .cc-top {
-    top: 1em;
-  }
-  .cc-left {
-    left: 1em;
-  }
-  .cc-right {
-    right: 1em;
-  }
-  .cc-bottom {
-    bottom: 1em;
-  }
-  
-  .cc-floating > .cc-link {
-    margin-bottom: 1em;
-  }
-  
-  .cc-floating .cc-message {
-    display: block;
-    margin-bottom: 1em;
-  }
-  
-  .cc-window.cc-floating .cc-compliance {
-    flex: 1 0 auto;
-  }
+
   
   .cc-window.cc-banner {
     align-items: center;
@@ -72,15 +27,8 @@
     align-items: center;
     align-content: space-between;
   }
-  .cc-floating .cc-compliance > .cc-btn {
-    flex: 1;
-  }
-  
-  .cc-btn + .cc-btn {
-    margin-left: 0.5em;
-  }
 
-  .cc-window {
+.cc-window {
     opacity: 1;
     -webkit-transition: opacity 1s ease;
     -moz-transition: opacity 1s ease;
@@ -117,19 +65,6 @@
   .cc-revoke:hover {
     transform: translateY(0);
   }
-  
-  .cc-grower {
-    /* Initially we don't want any height, and we want the contents to be hidden */
-    max-height: 0;
-    overflow: hidden;
-  
-    /* Set our transitions up. */
-    -webkit-transition: max-height 1s;
-    -moz-transition: max-height 1s;
-    -ms-transition: max-height 1s;
-    -o-transition: max-height 1s;
-    transition: max-height 1s;
-  }
 
 .cc-window,
 .cc-revoke {
@@ -141,64 +76,15 @@
   z-index: 9999;
 }
 
-.cc-window.cc-static {
-  position: static;
-}
-
 .cc-window.cc-banner {
   padding: 1em 1.8em;
   width: 100%;
   flex-direction: row;
 }
 
-.cc-revoke {
-  padding: 0.5em;
-}
-.cc-revoke:hover {
-  text-decoration: underline;
-}
 
-.cc-header {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.cc-btn,
-.cc-link,
-.cc-close,
-.cc-revoke {
-  cursor: pointer;
-}
-
-.cc-link {
-  opacity: 0.8;
-  display: inline-block;
-  padding: 0.2em;
-  text-decoration: underline;
-}
-.cc-link:hover {
-  opacity: 1;
-}
-.cc-link:active,
-.cc-link:visited {
-  color: initial;
-}
-
-
-.cc-highlight .cc-btn:first-child {
-  background-color: transparent;
-  border-color: transparent;
-}
-
-.cc-highlight .cc-btn:first-child:hover,
-.cc-highlight .cc-btn:first-child:focus {
-  background-color: transparent;
-  text-decoration: underline;
-}
-
-
-  .cc-dismiss {
+.cc-dismiss {
     @extend .m-button;
     color: var(--link-color);
     border: 1px solid var(--primary-foreground-color);
-  }
+}
