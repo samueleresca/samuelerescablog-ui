@@ -29,6 +29,7 @@ mix.js('js/helpers.js', 'js/')
   .js('js/home.js', 'js/')
   .js('js/post.js', 'js/')
   .js('js/page.js', 'js/')
+  .js('js/cookie.js', 'js/')
   .extract()
   .setPublicPath('../assets')
   .setResourceRoot('/assets')
@@ -38,11 +39,11 @@ mix.js('js/helpers.js', 'js/')
     manifestTransforms: [assetsTransform]
   })
   .sass('sass/app.scss', 'css/')
-  .minify('js/vendor.js')
   .options({
     processCssUrls: false
   })
   .copy('sass/fonts/icomoon/*.*', '../assets/fonts/')
+  .minify('../assets/js/vendor.js')
   .browserSync({
     proxy: "localhost:2368",
     files: [
