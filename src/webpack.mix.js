@@ -38,6 +38,7 @@ mix.js('js/helpers.js', 'js/')
     manifestTransforms: [assetsTransform]
   })
   .sass('sass/app.scss', 'css/')
+  .minify('js/vendor.js')
   .options({
     processCssUrls: false
   })
