@@ -1,0 +1,111 @@
+
+  
+  .cc-window.cc-banner,
+  .cc-window.cc-floating {
+    align-items: center;
+  }
+  
+  .cc-banner.cc-top,
+  .cc-floating.cc-top {
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+  .cc-banner.cc-bottom,
+  .cc-floating.cc-bottom  {
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+  .cc-banner .cc-message,
+  .cc-floating .cc-message {
+  }
+  
+  .cc-compliance {
+    display: flex;
+    align-items: center;
+    align-content: space-between;
+  }
+
+.cc-window {
+    opacity: 1;
+    -webkit-transition: opacity 1s ease;
+    -moz-transition: opacity 1s ease;
+    -ms-transition: opacity 1s ease;
+    -o-transition: opacity 1s ease;
+    transition: opacity 1s ease;
+    background-color: var(--background-color);
+  }
+  
+  .cc-window.cc-invisible {
+    opacity: 0;
+  }
+  
+  /* only animate ifhas class 'cc-animate' */
+  .cc-animate.cc-revoke {
+    -webkit-transition: transform 1s ease;
+    -moz-transition: transform 1s ease;
+    -ms-transition: transform 1s ease;
+    -o-transition: transform 1s ease;
+    transition: transform 1s ease;
+  }
+  .cc-animate.cc-revoke.cc-top {
+    transform: translateY(-2em);
+  }
+  .cc-animate.cc-revoke.cc-bottom {
+    transform: translateY(2em);
+  }
+  .cc-animate.cc-revoke.cc-active.cc-top {
+    transform: translateY(0);
+  }
+  .cc-animate.cc-revoke.cc-active.cc-bottom {
+    transform: translateY(0);
+  }
+  .cc-revoke:hover {
+    transform: translateY(0);
+  }
+
+.cc-window,
+.cc-revoke {
+  position: fixed;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: nowrap;
+  z-index: 9999;
+}
+
+.cc-window.cc-banner,
+.cc-window.cc-floating {
+  padding: 1em 1.8em;
+  width: 100%;
+  flex-direction: row;
+}
+
+.cc-dismiss {
+    @extend .m-button;
+    color: var(--link-color);
+    min-width: 120px;
+    border: 1px solid var(--primary-foreground-color);
+}
+
+.cc-message {
+  color: var(--primary-foreground-color);
+  overflow: hidden;
+  border-right: .40em solid var(--primary-foreground-color); 
+  white-space: nowrap;
+  margin-right: auto;
+  animation: 
+    typing 1.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 180px }
+}
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--primary-foreground-color) }
+}

@@ -35,8 +35,7 @@
   },
   "gpm": {
     "type": "theme",
-    "categories": [
-    ]
+    "categories": []
   },
   "keywords": [
     "ghost",
@@ -45,9 +44,5 @@
   ],
   "license": "MIT",
   "name": "samueleresca-ui",
-  "screenshots": {
-    "desktop": "assets/screenshot-desktop.jpg",
-    "mobile": "assets/screenshot-mobile.jpg"
-  },
   "version": "0.6.5"
 }
