@@ -1,25 +1,25 @@
 
   
-  .cc-window.cc-banner {
+  .cc-window.cc-banner,
+  .cc-window.cc-floating {
     align-items: center;
   }
   
-  .cc-banner.cc-top {
+  .cc-banner.cc-top,
+  .cc-floating.cc-top {
     left: 0;
     right: 0;
     top: 0;
   }
-  .cc-banner.cc-bottom {
+  .cc-banner.cc-bottom,
+  .cc-floating.cc-bottom  {
     left: 0;
     right: 0;
     bottom: 0;
   }
   
-  .cc-banner .cc-message {
-    display: block;
-    flex: 1 1 auto;
-    max-width: 100%;
-    margin-right: 1em;
+  .cc-banner .cc-message,
+  .cc-floating .cc-message {
   }
   
   .cc-compliance {
@@ -76,15 +76,36 @@
   z-index: 9999;
 }
 
-.cc-window.cc-banner {
+.cc-window.cc-banner,
+.cc-window.cc-floating {
   padding: 1em 1.8em;
   width: 100%;
   flex-direction: row;
 }
 
-
 .cc-dismiss {
     @extend .m-button;
     color: var(--link-color);
+    min-width: 120px;
     border: 1px solid var(--primary-foreground-color);
+}
+
+.cc-message {
+  color: var(--primary-foreground-color);
+  overflow: hidden;
+  border-right: .40em solid var(--primary-foreground-color); 
+  white-space: nowrap;
+  margin-right: auto;
+  animation: 
+    typing 1.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 180px }
+}
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--primary-foreground-color) }
 }
