@@ -3,7 +3,6 @@
   flex-direction: column;
   position: relative;
   margin-bottom: 20px;
-  height: 400px;
   background-color: var(--background-color);
   border-radius: 10px;
   border: 1px solid var(--secondary-border-color);
@@ -29,15 +28,10 @@
 
   .home-template & {
     width: calc((100%));
-
-    @include respond-to("medium") {
-      height: 720px;
-    }
   }
 
   @include respond-to("medium") {
     width: calc((100% / 2) - 20px);
-    height: 420px;
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 20px;
@@ -56,7 +50,7 @@
     }
 
     .m-article-card__info {
-      background-color: var(--secondary-subtle-color);
+      background-color: var(--background-color);
     }
 
     .m-article-card__title {
@@ -116,11 +110,11 @@
     height: 220px;
   }
 
-  .home-template & {
+  /*.home-template & {
     @include respond-to("medium") {
       height: 520px;
     }
-  }
+  }*/
 }
 
 .m-article-card__picture-link {
