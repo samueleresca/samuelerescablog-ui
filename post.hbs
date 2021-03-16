@@ -23,11 +23,7 @@ into the {body} of the default.hbs template --}}
         {{#post}}
         <div class="l-wrapper in-post {{#unless feature_image}}no-image{{/unless}} js-aos-wrapper" data-aos="fade-up"
           data-aos-delay="300">
-          {{#if @labs.members}}
           <div class="l-post-content has-subscribe-form js-progress-content">
-            {{else}}
-            <div class="l-post-content js-progress-content">
-              {{/if}}
               <div class="pos-relative js-post-content">
                 <div class="m-share">
                   <div class="m-share__content js-sticky">
@@ -54,7 +50,6 @@ into the {body} of the default.hbs template --}}
             </div>
           </div>
           {{!-- Email subscribe form at the bottom of the page --}}
-          {{#if @labs.members}}
           <section class="m-subscribe-section">
             <div class="l-wrapper in-post">
               <div class="m-subscribe-section__content">
@@ -79,12 +74,7 @@ into the {body} of the default.hbs template --}}
               </div>
             </div>
           </section>
-          {{/if}}
-          {{#if @labs.members}}
           <section class="m-author">
-            {{else}}
-            <section class="m-author no-subscribers">
-              {{/if}}
               <div class="m-author__content">
                 <div class="m-author__picture">
                   <a href="{{primary_author.url}}" class="m-author-picture" aria-label="Author picture">
