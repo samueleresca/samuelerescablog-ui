@@ -30,8 +30,7 @@
   "demo": "https://samuele.dev",
   "description": "Beautiful and clean theme that is easy and comfortable to use.",
   "engines": {
-    "ghost": ">=2.0.0",
-    "ghost-api": "v4"
+    "ghost": ">=2.0.0"
   },
   "gpm": {
     "type": "theme",
