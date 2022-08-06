@@ -13,7 +13,7 @@ jobs:
       with:
         node-version: 16
     - name: Install gscan
-    - run: npm install -g gscan
+      run: npm install -g gscan
     - name: Build theme
       working-directory: ./src
       run: npm run production
