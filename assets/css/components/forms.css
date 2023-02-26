@@ -1,0 +1,16 @@
+/* Forms
+/* ---------------------------------------------------------- */
+
+.input,
+.textarea {
+    background: var(--color-bg);
+    border-radius: var(--radius);
+    border: none;
+    border: solid 1px var(--color-border);
+    color: inherit;
+    display: block;
+    outline: 0;
+    padding: 0 0.6em;
+    text-decoration: none;
+    width: 100%;
+}

@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  ghost:
+    image: ghost:latest
+    container_name: ghost
+    volumes:
+      - .:/var/lib/ghost/content/themes/samueleresca-ui
+      - ./ghost.db:/var/lib/ghost/content/data/ghost.db
+    environment:
+      - NODE_ENV=development
+    ports:
+      - 2368:2368

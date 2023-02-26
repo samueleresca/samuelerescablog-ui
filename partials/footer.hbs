@@ -1,25 +1,11 @@
-{{!--
-This footer template is shared across all the pages.
---}}
 
-<footer class="m-footer">
-  <div class="m-footer__content">
-    <p class="m-footer-copyright">
-      <span>{{@site.title}} &copy; {{date format="YYYY"}}</span>
-      {{!-- <span>{{t "Published with"}} <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a></span> --}}
-    </p>
-    <nav class="m-footer-social">
-      <a href="https://github.com/samueleresca" target="_blank" rel="noopener" aria-label="Github">
-        <span class="icon-github"></span>
-      </a>
-      {{#if @site.twitter}}
-      <a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener" aria-label="Twitter">
-        <span class="icon-twitter"></span>
-      </a>
-      {{/if}}
-      <a href="https://www.linkedin.com/in/samuele-resca/" target="_blank" rel="noopener" aria-label="Twitter">
-        <span class="icon-linkedin"></span>
-      </a>
-    </nav>
-  </div>
+{{> "scrolltotop"}}
+
+<footer class="foot">
+    <div class="container">
+        <div class="foot-meta">
+            Written and maintained by <a href="/about">Samuele Resca</a>
+        </div>
+        {{> "socials"}}
+    </div>
 </footer>

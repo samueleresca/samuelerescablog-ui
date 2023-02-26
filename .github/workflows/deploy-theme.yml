@@ -12,10 +12,8 @@ jobs:
         with:
           node-version: '10.x'
       - run: npm install
-        working-directory: ./src
       - name: Build theme
-        working-directory: ./src
-        run: npm run production
+        run: npm run zip
       - name: 'Deploy Ghost Theme'
         run: node src/deploy/index.js
         env:
