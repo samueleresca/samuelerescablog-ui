@@ -27,7 +27,7 @@
     "browser-sync-webpack-plugin": "^2.3.0",
     "dotenv": "^8.6.0",
     "ghost-cli": "^1.17.1",
-    "laravel-mix": "5.0.9",
+    "laravel-mix": "6.0.49",
     "laravel-mix-workbox": "^0.1.4",
     "resolve-url-loader": "^4.0.0",
     "run-script-os": "^1.1.6",
