@@ -24,11 +24,6 @@
         "email": "samuele.resca@gmail.com",
         "url": "https://samuele.dev"
     },
-    "keywords": [
-        "ghost",
-        "theme",
-        "ghost-theme"
-    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/samueleresca/samuelerescablog-ui.git"
@@ -41,6 +36,7 @@
         "@rollup/plugin-commonjs": "^25.0.0",
         "@rollup/plugin-node-resolve": "^15.0.1",
         "@rollup/plugin-terser": "^0.4.0",
+        "@tryghost/admin-api": "^1.13.11",
         "bestzip": "^2.2.1",
         "postcss": "^8.4.24",
         "postcss-import": "^15.1.0",
