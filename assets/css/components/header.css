@@ -33,3 +33,8 @@
     height: 105px;
     width: 80px;
 }
+
+.head-actions,
+.head-menu {
+    min-width: 113px;
+}
