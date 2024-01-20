@@ -1,0 +1,38 @@
+{{!-- The template below includes the markup for each post --}}
+
+{{#foreach posts}}
+    <article class="m-article-card no-picture {{post_class}}">
+    {{#if primary_tag}}
+      <div class="m-article-card__info">
+        <a href="{{primary_tag.url}}" class="m-article-card__tag">{{primary_tag.name}}</a>
+    {{else}}
+      <div class="m-article-card__info no-tag">
+    {{/if}}
+      <a href="{{url}}" class="m-article-card__info-link">
+        <div>
+          <h2 class="m-article-card__title js-article-card-title {{#unless feature_image}}js-article-card-title-no-image{{/unless}}" title="{{title}}">
+            {{title}}
+          </h2>
+           <p class="m-article-card__initial js-article-card-initial">
+            {{excerpt}} <u>...</u>
+          </p>
+        </div>
+        <div class="m-article-card__timestamp">
+          <span>{{date published_at timeago="true"}}</span>
+          <span>&bull;</span>
+          <span>{{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</span>
+        </div>
+      </a>
+    </div>
+  </article>
+  {{#is "post"}}
+    </div>
+  {{/is}}
+  {{else}}
+    <header class="m-heading no-margin">
+      <h3>{{t "No posts found"}}</h3>
+      <p>
+        {{t "Apparently there are no posts at the moment, check again later."}}
+      </p>
+    </header>
+{{/foreach}}

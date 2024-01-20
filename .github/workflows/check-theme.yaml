@@ -5,17 +5,20 @@ on:
       - master
 jobs:
   check-compatibility:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
       with:
         node-version: 16
     - name: Install gscan
       run: npm install -g gscan
     - name: Build theme
       run: npm install
+      working-directory: ./src
     - name: Pack theme
-      run: npm run zip
+      working-directory: ./src
+      run: npm run production
     - name: Scan for compatibility issues
-      run: gscan -z ./samueleresca-ui.zip
+      working-directory: ./src
+      run: gscan ./samueleresca-ui.zip
