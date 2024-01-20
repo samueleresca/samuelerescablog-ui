@@ -35,7 +35,10 @@
         width: 100%;
     }
 
-    pre, .katex-display {
+    pre,
+    ul,
+    p,
+    .katex-display {
         overflow-x: auto;
     }
 }
@@ -51,18 +54,19 @@
         font-size: 14px;
         margin: 0;
     }
-    
+
     .tag:after {
         content: " /";
     }
 
-    .tag:last-child:after{
+    .tag:last-child:after {
         content: "";
     }
 }
 
 .card-link {
     text-decoration: none;
+
     &:hover {
         color: var(--color-link);
     }
@@ -82,15 +86,11 @@
 
     display: grid;
     grid-template-columns:
-        [full-start] var(--full)
-        [wide-start] var(--wide)
-        [main-start] var(--main) [main-end]
-        var(--wide) [wide-end]
-        var(--full) [full-end];
+        [full-start] var(--full) [wide-start] var(--wide) [main-start] var(--main) [main-end] var(--wide) [wide-end] var(--full) [full-end];
 }
 
 .kg-width-wide,
-.kg-content-wide > div {
+.kg-content-wide>div {
     grid-column: wide-start / wide-end;
 }
 
