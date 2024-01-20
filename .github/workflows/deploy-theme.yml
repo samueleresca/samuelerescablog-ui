@@ -17,7 +17,9 @@ jobs:
       - run: npm install
       - name: Build theme
         run: npm run zip
-      - name: 'Deploy Ghost Theme'
+      - name: Install Ghost Admin API
+        run: npm install -g @tryghost/admin-api
+      - name: Deploy Ghost Theme
         run: node infra/deploy.js
         env:
           url: ${{ secrets.GHOST_ADMIN_API_URL }}
