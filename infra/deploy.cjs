@@ -7,9 +7,8 @@ const GhostAdminApi = require('@tryghost/admin-api');
             key: process.env.key,
             version: 'canary'
         });
-
         // Deploy it to the configured site
-        await api.themes.upload({file: 'samueleresca-ui.zip'});
+        await api.themes.upload({ file: 'samueleresca-ui.zip' });
         console.log('Theme successfully uploaded.');
     } catch (err) {
         console.error(err);
