@@ -3,9 +3,6 @@ on:
   push:
     branches:
     - master
-  pull_request:
-    branches:
-      - master
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -22,4 +19,3 @@ jobs:
         env:
           url: ${{ secrets.GHOST_ADMIN_API_URL }}
           key: ${{ secrets.GHOST_ADMIN_API_KEY }}
-          branch: ${{ github.ref_name }}
