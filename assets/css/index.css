@@ -4,18 +4,13 @@
 /* Base components */
 @import "vars.css";
 @import "components/global.css";
+@import "components/error.css";
 @import "components/forms.css";
-@import "components/buttons.css";
-
-/* Ghost components */
-@import "ghost/header.css";
-@import "ghost/content.css";
-@import "ghost/readmore.css";
-@import "ghost/socials.css";
-@import "ghost/errors.css";
-@import "ghost/footer.css";
-@import "ghost/badge.css";
-@import "ghost/pagination.css";
-@import "ghost/signin.css";
+@import "components/header.css";
+@import "components/content.css";
+@import "components/readmore.css";
+@import "components/socials.css";
+@import "components/footer.css";
+@import "components/signin.css";
 
 

@@ -19,16 +19,11 @@
 {{> "header"}}
 
 
-<main class="main">
+<main class="main error-page">
 
     <section class="page error">
-        <div class="container">
-
-            <section class="error-content">
-
                 <h1 class="error-code">{{statusCode}}</h1>
                 <p class="error-description">{{message}}</p>
-                <p class="error-link"><a href="{{@site.url}}">Go to the front page →</a></p>
 
                 {{#if errorDetails}}
                 <section class="error-stack">

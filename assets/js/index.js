@@ -1,5 +1,3 @@
-// JavaScript files are compiled and minified during the build process to the assets/built folder. See available scripts in the package.json file.
-
 // Import CSS
 import "../css/index.css";
 
@@ -7,7 +5,5 @@ import "../css/index.css";
 import infiniteScroll from "./infiniteScroll";
 import toTheTopNeverStop from "./toTheTopNeverStop";
 
-
-// Call the menu and infinite scroll functions
 toTheTopNeverStop();
 infiniteScroll();
