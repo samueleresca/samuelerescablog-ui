@@ -41,6 +41,13 @@
     .katex-display {
         overflow-x: auto;
     }
+
+    .gist {
+        .gist-data {
+            max-height: 60vh;
+            overflow: scroll;
+        }
+    }
 }
 
 .card {
