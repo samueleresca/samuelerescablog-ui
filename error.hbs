@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}">
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{asset "built/index.css"}}" />
+    <script src="{{asset "built/index.js"}}" defer></script>
+
+    <title>{{meta_title}}</title>
+
+    {{ghost_head}}
+    {{!-- Outputs important meta data and settings, should always be in <head> --}}
+
+</head>
+
+<body class="{{body_class}}">
+
+{{> "header"}}
+
+
+<main class="main error-page">
+
+    <section class="page error">
+                <h1 class="error-code">{{statusCode}}</h1>
+                <p class="error-description">{{message}}</p>
+
+                {{#if errorDetails}}
+                <section class="error-stack">
+                    <h4>Theme errors:</h4>
+                    <ul class="error-stack-list">
+                        {{#foreach errorDetails}}
+                        <li>
+                            <h5 class="error-stack-function">{{{rule}}}</h5>
+
+                            {{#foreach failures}}
+                            <span class="error-stack-file"><strong>Ref:</strong> {{ref}}</span><br>
+                            <span class="error-stack-file"><strong>Message:</strong> {{message}}</span>
+                            {{/foreach}}
+                        </li>
+                        {{/foreach}}
+                    </ul>
+                </section>
+                {{/if}}
+
+            </section>
+
+        </div>
+    </section>
+</main>
+
+{{> "footer"}}
+
+{{!-- <foot> --}}
+{{ghost_foot}}
+{{!-- Outputs important scripts - should always be included before closing body tag --}}
+
+</body>
+</html>

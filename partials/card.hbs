@@ -1,0 +1,20 @@
+{{!--
+Re-usable card for linking to posts
+--}}
+
+<article class="card {{post_class}}">
+
+    <div class="card-content">
+        <a class="card-link" href="{{url}}">
+            <h2 class="card-title">{{title}}</h2>
+        <span class="card-meta"><time datetime="{{date format=" YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+            <span class="bull">&bull;</span>
+                {{#foreach tags}}
+                <span class="tag">{{name}}</span>
+                {{/foreach}}
+        </span>
+        <p>{{excerpt}}</p>
+        </a>
+    </div>
+
+</article>

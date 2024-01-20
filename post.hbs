@@ -1,171 +1,37 @@
-{{!--
-This template is used for the post page.
---}}
+{{!< default}} {{#post}} <article class="article {{post_class}}">
 
-{{!-- The tag below means: insert everything in this file
-into the {body} of the default.hbs template --}}
-{{!< default}}
+    <header class="header">
+        <h1 class="title">{{title}}</h1>
+        <span class="post-meta">
+            <time datetime="{{date format=" YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+            <span class="bull">&bull;</span> by {{#foreach authors}}<span class="author">{{name}}</span>{{/foreach}}
+        </span>
 
-<div class="main-wrap">
-  {{!-- Everything inside the #post tags pulls data from the post --}}
-  {{#post}}
-  {{!-- Special header.hbs partial to generate the <header> tag --}}
-  {{> header background=feature_image}}
-  {{!-- Inject styles of the hero image to make it responsive --}}
-  {{> hero background=feature_image}}
-  </section>
-  {{/post}}
-  {{> bookbanner}}
-  <main>
-    <article>
-      <div class="l-content in-post">
-        {{!-- Everything inside the #post tags pulls data from the post --}}
-        {{#post}}
-        <div class="l-wrapper in-post {{#unless feature_image}}no-image{{/unless}} js-aos-wrapper" data-aos="fade-up"
-          data-aos-delay="300">
-          <div class="l-post-content has-subscribe-form js-progress-content">
-              <div class="pos-relative js-post-content">
-                <div class="m-share">
-                  <div class="m-share__content js-sticky">
-                    <a href="https://twitter.com/intent/tweet?text={{encode title}}&url={{url absolute='true'}}"
-                      class="m-icon-button filled in-share" target="_blank" rel="noopener" aria-label="Twitter">
-                      <span class="icon-twitter"></span>
-                    </a>
-                    <a class="m-icon-button filled in-share"
-                      href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute='true'}}&title={{encode title}}"
-                      onclick="window.open(this.href, 'mywin',
-'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">
-                      <span class="icon-linkedin"></span>
-                    </a>
-                    <button class="m-icon-button filled in-share progress js-scrolltop" aria-label="Scroll to top">
-                      <span class="icon-arrow-top"></span>
-                      <svg>
-                        <circle class="progress-ring__circle js-progress" fill="transparent" r="0" />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-                {{content}}
-              </div>
-            </div>
-          </div>
-          {{!-- Email subscribe form at the bottom of the page --}}
-          <section class="m-subscribe-section">
-            <div class="l-wrapper in-post">
-              <div class="m-subscribe-section__content">
-                <div class="m-subscribe-section__text">
-                  <h4 class="m-subscribe-section__title">{{t "Subscribe to our newsletter"}}</h4>
-                  <p class="m-subscribe-section__description">
-                    {{t "Get the latest posts delivered right to your inbox."}}
-                  </p>
-                </div>
-                <form class="signup-form" data-members-form="signup">
-                  <fieldset>
-                    <input data-members-email type="email" placeholder="Type your email..." required="true"
-                      autocomplete="false" class="m-input in-subscribe-section" />
-                    <button class="m-button outlined block" type="submit">
-                      <span class="button-content">Subscribe</span>
-                    </button>
-                  </fieldset>
-                  <div class="message-success message"><strong>Great!</strong> Check your inbox and click the link to
-                    confirm your subscription</div>
-                  <div class="message-error message">Please enter a valid email address!</div>
-                </form>
-              </div>
-            </div>
-          </section>
-          <section class="m-author">
-              <div class="m-author__content">
-                <div class="m-author__picture">
-                  <a href="{{primary_author.url}}" class="m-author-picture" aria-label="Author picture">
-                    {{#if primary_author.profile_image}}
-                    <div style="background-image: url({{primary_author.profile_image}});"></div>
-                    {{else}}
-                    <div style="background-image: url({{asset "images/default-avatar-square-small.jpg"}});"></div>
-                    {{/if}}
-                  </a>
-                </div>
-                <div class="m-author__info">
-                  <h4 class="m-author__name">
-                    <a href="{{primary_author.url}}">{{primary_author.name}}</a>
-                  </h4>
-                  {{#has author="count:>1"}}
-                  <p class="m-small-text in-author-along-with">
-                    {{authors separator=", " prefix=(t "Among with no break line") from="2"}}
-                  </p>
-                  {{/has}}
-                  {{#if primary_author.bio}}
-                  <p class="m-author__bio">{{primary_author.bio}}</p>
-                  {{/if}}
-                  <ul class="m-author-links">
-                    <li>
-                      <a href="https://github.com/samueleresca" target="_blank" rel="noopener" aria-label="Github">
-                        <span class="icon-github"></span>
-                      </a>
-                    </li>
-                    {{#if primary_author.twitter}}
-                    <li>
-                      <a href="https://twitter.com/{{primary_author.twitter}}" target="_blank" rel="noopener"
-                        aria-label="Twitter">
-                        <span class="icon-twitter"></span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://www.linkedin.com/in/samuele-resca/" target="_blank" rel="noopener"
-                        aria-label="Linkedin">
-                        <span class="icon-linkedin"></span>
-                      </a>
-                    </li>
-                    {{/if}}
-                  </ul>
-                </div>
-              </div>
-            </section>
-            {{!-- Related posts --}}
-            {{#get "posts" limit="10" order="published_at desc" include="tags,authors" as |related|}}
-            <section class="m-recommended">
-              <div class="l-wrapper in-recommended">
-                <h3 class="m-section-title in-recommended">{{t "Recommended for you"}}</h3>
-                <div class="m-recommended-articles">
-                  <div class="m-recommended-slider js-recommended-articles">
-                    {{!-- The tag below iterates over all the related posts --}}
-                    {{> "loop"}}
-                  </div>
-                </div>
-              </div>
-            </section>
-            {{/get}}
-           <!-- <section class="m-comments">
-              <div class="m-load-comments">
-                <div class="m-load-comments__line"></div>
-                <button class="m-icon-button filled as-load-comments js-tooltip js-load-comments"
-                  data-tippy-content="Load comments">
-                  <span class="icon-comments"></span>
-                </button>
-              </div>
-              <div class="m-load-comments__iframe l-wrapper in-comments js-comments-iframe">
-                <div id="disqus_thread"></div>
-                <script defer>
-                  var disqus_config = function () {
-                    this.page.url = "{{url absolute="true"}}";
-                    this.page.identifier = "ghost-{{comment_id}}"
-                  };
-                  (function () {
-                    var d = document, s = d.createElement('script');
-                    s.src = 'https://samuelerescanet.disqus.com/embed.min.js';
-                    s.setAttribute('data-timestamp', +new Date());
-                    (d.head || d.body).appendChild(s);
-                  })();
-                </script>
-              </div>
-            </section>-->
-            {{/post}}
-        </div>
+        {{> "socials"}}
+
+    </header>
+
+    <div class="content canvas">
+        {{content}}
+    </div>
+
     </article>
-  </main>
-</div>
 
-{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
-{{#contentFor "scripts"}}
-<script defer src="{{asset "js/post.js"}}"></script>
-{{/contentFor}}
+    <nav class="readmore">
+        <div class="readmore-inner container">
+            <div class="readmore-next">
+                {{#next_post}}<a href="{{url}}">
+                    <span class="arrow-left"></span>{{> "icons/arrow-left"}}</span>
+                    <h5>{{title}}</h4>
+                    </a>{{/next_post}}
+            </div>
+            <div class="readmore-prev">
+                {{#prev_post}}<a href="{{url}}">
+                    <h5>{{title}}</h4> 
+                    <span class="arrow-right">{{> "icons/arrow-right"}}</span>
+                </a>{{/prev_post}}
+            </div>
+        </div>
+    </nav>
+
+    {{/post}}

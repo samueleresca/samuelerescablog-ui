@@ -1,0 +1,91 @@
+.article {
+    color: var(--color-content-font);
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        color: var(--color-content-heading);
+        margin: 2rem 0;
+    }
+
+    p {
+        font-size: var(--font-content-size);
+    }
+
+    .header {
+        text-align: center;
+        margin-bottom: 4rem;
+
+        h1 {
+            margin-bottom: 0;
+        }
+    }
+
+    .title {
+        font-size: 32px;
+    }
+}
+
+.card {
+    margin-bottom: 2rem;
+
+    h2 {
+        margin: 0;
+    }
+
+    p {
+        font-size: 14px;
+        margin: 0;
+    }
+    
+    .tag:after {
+        content: " /";
+    }
+
+    .tag:last-child:after{
+        content: "";
+    }
+}
+
+.card-link {
+    text-decoration: none;
+    &:hover {
+        color: var(--color-link);
+    }
+}
+
+.card-meta,
+.post-meta {
+    color: var(--color-metadata-font);
+    font-size: var(--font-metadata-size);
+}
+
+.kg-width-full.kg-content-wide {
+    --gap: 4vw;
+    --main: min(var(--content-width, 720px), 100% - var(--gap) * 2);
+    --wide: minmax(0, calc((var(--container-width, 1200px) - var(--content-width, 720px)) / 2));
+    --full: minmax(var(--gap), 1fr);
+
+    display: grid;
+    grid-template-columns:
+        [full-start] var(--full)
+        [wide-start] var(--wide)
+        [main-start] var(--main) [main-end]
+        var(--wide) [wide-end]
+        var(--full) [full-end];
+}
+
+.kg-width-wide,
+.kg-content-wide > div {
+    grid-column: wide-start / wide-end;
+}
+
+.kg-width-full {
+    grid-column: full-start / full-end;
+}
+
+.kg-width-full img {
+    width: 100%;
+}

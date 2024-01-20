@@ -5,19 +5,17 @@ on:
     - master
 jobs:
   deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@v1
         with:
           node-version: '10.x'
       - run: npm install
-        working-directory: ./src
       - name: Build theme
-        working-directory: ./src
-        run: npm run production
+        run: npm run zip
       - name: 'Deploy Ghost Theme'
-        run: node src/deploy/index.js
+        run: node infra/deploy.js
         env:
           url: ${{ secrets.GHOST_ADMIN_API_URL }}
           key: ${{ secrets.GHOST_ADMIN_API_KEY }}
