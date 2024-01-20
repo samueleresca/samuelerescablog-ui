@@ -1,6 +1,6 @@
-import GhostAdminApi from '@tryghost/admin-api';
+const GhostAdminApi = require('@tryghost/admin-api');
 
-async function main() {
+(async function main() {
     try {
         const api = new GhostAdminApi({
             url: process.env.url,
@@ -14,12 +14,7 @@ async function main() {
         //console.log('Theme successfully uploaded.');
     } catch (err) {
         console.error(err);
-        console.error(err.errors.map(x => x.message));
+        console.error(err.errors.map(x=>x.message));
         process.exit(1);
     }
-}
-
-// Execute the main function when the module is run
-if (require.main === module) {
-    main();
-}
+}());
