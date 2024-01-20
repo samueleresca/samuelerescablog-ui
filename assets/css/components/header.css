@@ -14,7 +14,7 @@
     }
 
     li {
-        margin-right: 15px;
+        margin: 5px;
     }
 }
 
@@ -24,17 +24,20 @@
     align-items: center;
 }
 
-.head-menu {
+.head-actions, .head-menu, .head-brand {
     display: flex;
+    flex: 1;
+}
+
+.head-brand {
+    justify-content: center;
 }
 
 .head-logo {
-    display: inline-flex;
     height: 105px;
     width: 80px;
 }
-
-.head-actions,
-.head-menu {
-    min-width: 113px;
+.head-actions {
+    display: flex;
+    justify-content: flex-end;
 }
