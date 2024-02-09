@@ -36,7 +36,13 @@
 .head-logo {
     height: 105px;
     width: 80px;
+    background-color: var(--color-content-heading);
 }
+
+.head-logo:hover {
+    background-color: var(--color-link-hover);
+}
+
 .head-actions {
     display: flex;
     justify-content: flex-end;
