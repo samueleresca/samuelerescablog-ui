@@ -44,10 +44,6 @@ h5 {
     margin-bottom: 1rem;
 }
 
-li {
-    list-style-position: inside;
-}
-
 main {
     flex: 1;
 }
