@@ -40,9 +40,9 @@
         width: 100%;
     }
 
-    > pre,
-    > ul,
     > p,
+    pre,
+    ul,
     .katex-display {
         overflow-x: auto;
     }
