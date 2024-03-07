@@ -53,6 +53,10 @@
             overflow: scroll;
         }
     }
+
+    .footnote-backref {
+        font-family: monospace;
+    }
 }
 
 .card {
