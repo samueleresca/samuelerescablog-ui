@@ -17,6 +17,18 @@
     src: url(../fonts/GeistMono-Regular.woff2);
 }
 
+ol, ul {
+    list-style: none;
+}
+
+ol {
+    list-style: decimal;
+}
+
+ul {
+    list-style-type: disc;
+}
+
 body {
     display: flex;
     flex-direction: column;
